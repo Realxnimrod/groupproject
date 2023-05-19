@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Form</title>
+	<link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+	<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+</head>
+<body>
+    <h2>Travel Form</h2>
+    <form method="POST" action="process.php">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input name="phone" type="text" id="phone"/> 
+
+		<script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                separateDialCode: true,
+                excludeCountries: ["in", "il"],
+                preferredCountries: ["ru", "jp", "pk", "no"]
+            });
+        </script>
+		<br><br>
+
+        <label for="associates">Number of Associates:</label>
+        <input type="number" name="associates" required><br><br>
+
+        <label for="duration">Duration of Stay:</label>
+        <input type="text" name="duration" required><br><br>
+
+        <label for="location">Location of Stay:</label>
+        <select name="location" required>
+            <option value="">Select Tourist Attraction</option>
+            <option value="Nairobi National Park">Nairobi National Park</option>
+            <option value="Maasai Mara National Reserve">Maasai Mara National Reserve</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
